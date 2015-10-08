@@ -11,12 +11,14 @@
 |
 */
 
-Route::get("/", function () {
-    return view("welcome");
-});
-
-//"/lorem-ipsum", function () {
-
+/*Route::get("/", function () {
+    //return view("welcome");
+    return "hello";
+});*/
 Route::controller("/lorem-ipsum","LoremIpsumController");
+
+Route::controller("/", "IndexController");
+
+
 
 Route::controller("/random-user","RandomUserController");
