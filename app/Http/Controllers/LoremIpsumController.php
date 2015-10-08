@@ -13,6 +13,6 @@ class LoremIpsumController extends Controller {
     * Responds to requests to GET /lorem-ipsum
     */
     public function getIndex() {
-        return "Lorem ipsum generator page!";
+        return view("lorem.index");
     }
 }

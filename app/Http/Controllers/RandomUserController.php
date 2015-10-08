@@ -13,6 +13,6 @@ class RandomUserController extends Controller {
     * Responds to requests to GET /random-user
     */
     public function getIndex() {
-        return "Random user generator page!";
+        return view("user.index");
     }
 }

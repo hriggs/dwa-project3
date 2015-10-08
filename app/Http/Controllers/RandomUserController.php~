@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 
-class LoremIpsumController extends Controller {
+class RandomUserController extends Controller {
 	
     public function __construct() {
         # Put anything here that should happen before any of the other actions
     }
     
     /**
-    * Responds to requests to GET /lorem-ipsum
+    * Responds to requests to GET /random-user
     */
     public function getIndex() {
-        return "Lorem ipsum generator page!";
+        return "Random user generator page!";
     }
 }

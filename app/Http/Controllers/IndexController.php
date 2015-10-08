@@ -13,6 +13,6 @@ class IndexController extends Controller {
     * Responds to requests to GET /
     */
     public function getIndex() {
-        return "Index page!";
+        return view("index.index");
     }
 }
