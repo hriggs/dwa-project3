@@ -13,6 +13,11 @@
 @stop
 
 @section('content')
-	<p>Lorem ipsum generator page.</p>
+	<form>
+		<label>Number of Paragraphs:</label>
+		<input maxlength=1 type="text" name="para_num">
+		<br>
+		<input type="submit" class="btn btn-primary" value="Generate Lorem Ipsum">
+	</form>
 @stop
 

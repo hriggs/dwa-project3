@@ -13,6 +13,11 @@
 @stop
 
 @section('content')
-    <p>Random user generator page.</p>
+	<form>
+		<label>Number of Users:</label>
+		<input maxlength=1 type="text" name="user_num">
+		<br>
+		<input type="submit" class="btn btn-primary" value="Generate Random Users">
+	</form>
 @stop
 
