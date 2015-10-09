@@ -20,10 +20,6 @@
 			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 content">
 				<h1>Developer's Best Friend</h1>
 				
-				<h2>
-					@yield('subheading')
-				</h2>
-				
 				<!-- Static navbar -->
       		<nav class="navbar navbar-default">
         			<div class="container-fluid">
@@ -34,18 +30,23 @@
               				<span class="icon-bar"></span>
               				<span class="icon-bar"></span>
             			</button>
+            			<a class="navbar-brand" href="/"><img src="/images/icon.png" alt=""></a>
           			</div>
           			<div id="navbar" class="navbar-collapse collapse">
            	 			<ul class="nav navbar-nav">
-             	 			<li><a href="#">Home</a></li>
-             	 			<li><a href="#">About</a></li>
-             	 			<li><a href="#">Contact</a></li>
+             	 			<li><a href="/">Home</a></li>
+             	 			<li><a href="/lorem-ipsum">Lorem Ipsum</a></li>
+             	 			<li><a href="/random-user">Random User</a></li>
             			</ul>
           			</div><!--/.nav-collapse -->
         			</div><!--/.container-fluid -->
       		</nav>
-				
-				<p>
+      		
+      		<h2>
+					@yield('subheading')
+				</h2>
+
+				<p class="justify">
 					{{-- Page description will be yielded here --}}
 					@yield('description')
 				</p>
@@ -55,7 +56,10 @@
         			@yield('content')
     			</section>
 
-    		<footer>Copyright &copy; {{ date('Y') }} Hannah Riggs</footer>
+    		<footer>
+    			Copyright &copy; {{ date('Y') }} Hannah Riggs <br>
+    			<a href="https://icons8.com/" target="_blank">Icon source</a>
+    		</footer>
     		</div> <!-- end content -->
     		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
    	</div> <!-- end row of all content -->

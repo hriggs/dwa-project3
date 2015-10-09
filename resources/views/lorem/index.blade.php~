@@ -5,7 +5,7 @@
 @stop
 
 @section('subheading')
-	Lorem Ipsum Generator
+	Lorem ipsum Generator
 @stop
 
 @section('description')

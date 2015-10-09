@@ -10,9 +10,45 @@ CSCI E-15: Dynamic Web Applications
 }
 
 body {
-	background-color: red;
+	background-color: #f1592a;
+}
+
+h1 {
+	text-align: center;
+}
+
+.navbar-default {
+	background-color: #286090;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: #12a89d;
 }
 
 .content {
-	background-color: blue;
+	background-color: #fefefe;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.btn {
+	background-color: #12a89d;
+	border-color: #12a89d;
+}
+
+footer {
+	text-align: center;
+	border-top: 5px solid #286090;
+	margin-top: 2em;
+	padding: 1em 0;
+}
+
+footer a {
+	color: #286090;
 }
