@@ -15,7 +15,7 @@
 @section('content')
 	<form>
 		<label>Number of Users:</label>
-		<input maxlength=1 type="text" name="user_num">
+		<input maxlength=1 type="text" name="user_num" class="form_box">
 		<br>
 		<input type="submit" class="btn btn-primary" value="Generate Random Users">
 	</form>

@@ -16,4 +16,4 @@ tool to generate random user data.
 
 ## Outside code
 * Bootstrap: <http://getbootstrap.com/>
-* Free to use icon: <https://icons8.com/>
+* Icon: <https://icons8.com/>

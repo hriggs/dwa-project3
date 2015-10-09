@@ -15,7 +15,7 @@
 @section('content')
 	<form>
 		<label>Number of Paragraphs:</label>
-		<input maxlength=1 type="text" name="para_num">
+		<input maxlength=1 type="text" name="para_num" class="form_box">
 		<br>
 		<input type="submit" class="btn btn-primary" value="Generate Lorem Ipsum">
 	</form>
