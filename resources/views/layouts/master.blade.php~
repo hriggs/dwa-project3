@@ -58,7 +58,7 @@
 
     		<footer>
     			Copyright &copy; {{ date('Y') }} Hannah Riggs <br>
-    			<a href="https://icons8.com/">Icon source</a>
+    			<a href="https://icons8.com/" target="_blank">Icon source</a>
     		</footer>
     		</div> <!-- end content -->
     		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>

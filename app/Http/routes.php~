@@ -17,8 +17,6 @@
 });*/
 Route::controller("/lorem-ipsum","LoremIpsumController");
 
-Route::controller("/", "IndexController");
-
-
-
 Route::controller("/random-user","RandomUserController");
+
+Route::controller("/", "IndexController");

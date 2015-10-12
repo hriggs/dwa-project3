@@ -37,6 +37,7 @@
              	 			<li><a href="/">Home</a></li>
              	 			<li><a href="/lorem-ipsum">Lorem Ipsum</a></li>
              	 			<li><a href="/random-user">Random User</a></li>
+             	 			<li><a href="/password">xkcd Password</a></li>
             			</ul>
           			</div><!--/.nav-collapse -->
         			</div><!--/.container-fluid -->
