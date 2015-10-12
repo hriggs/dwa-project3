@@ -79,14 +79,8 @@ footer a {
 	clear: both;
 }
 
-.password {
-	margin: 2em 0 0 0;
-	padding: 1em;
-	border: 2px solid #606060;
-}
-
 .output {
-	border: 2px solid #606060;
+	border: 2px solid #286090;
 	padding: 1em;
 	margin: 2em 0 0 0;
 }

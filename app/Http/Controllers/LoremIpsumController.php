@@ -17,11 +17,27 @@ class LoremIpsumController extends Controller {
         return view("lorem.index")->with('text', $this->generateLorem());
     }
     
+    public function getShow() {
+    $lorem = "Lipsum::html()";
+
+		echo eval($lorem);
+    }
+    
     /**
     * Create paragraphs
     */
     public function generateLorem() {
-        return Lipsum::headers()->link()->ul()->html(5);
-        //return "testing";
+    	
+    	$lorem = "Lipsum::headers()->link()->ul()->html(3);";
+
+			/*ob_start();
+eval($lorem);
+$this_string = ob_get_contents();
+ob_end_clean();*/
+
+echo is_callable($lorem);
+
+return $lorem;
+    		//return eval($lorem);
     }
 }

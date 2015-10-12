@@ -28,7 +28,21 @@
 		<input type="submit" class="btn btn-primary submit" value="Generate Lorem Ipsum">
 		<div class="output">
 		    @if($text)
-        	 	<div>Show book: {{ $text }}</div>
+        	 	<?php 
+        	 				/*ob_start();
+				eval($text);
+				$this_string = ob_get_contents();
+				ob_end_clean();*/
+				
+        	 	
+        	 	//eval("\$text = \"$text\";"); 
+$str = "Lipsum::headers()->link()->ul()->html(3);";
+
+//eval('echo Lipsum::headers()->link()->ul()->html(3);');
+eval("echo $str");
+        	 	eval("echo $text");
+        	 	
+        	 	?>
     		@else
          	<p>Your lorem ipsum will appear here!</p>
     		@endif
