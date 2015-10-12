@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-	<form method="GET" action="#">
+	<form method="POST" action="#">
 		<label>Number of Paragraphs:</label>
 		<input maxlength=1 type="text" name="para_num" class="form-box">
 		<br>
@@ -25,7 +25,7 @@
   			<option value="verylong">Very long</option>
 		</select> 
 		<br>
-		<p class="include">Include:</p>
+		<p class="include">Optional Includes:</p>
 		<input type="checkbox" name="headers" value="headers"> Headers
 		<br>
 		<input type="checkbox" name="unordered" value="unordered"> Unordered Lists 

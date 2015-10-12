@@ -25,7 +25,7 @@
   			<option value="verylong">Very long</option>
 		</select> 
 		<br>
-		<p class="include">Optional includes:</p>
+		<p class="include">Optional Includes:</p>
 		<input type="checkbox" name="headers" value="headers"> Headers
 		<br>
 		<input type="checkbox" name="unordered" value="unordered"> Unordered Lists 

@@ -18,4 +18,4 @@ tool to generate random user data.
 * Bootstrap: <http://getbootstrap.com/>
 * Icon: <https://icons8.com/>
 * laravel-lipsum (lorem ipsum) package: <https://github.com/magyarjeti/loripsum-client>
-* Faker package (user data): <https://github.com/fzaninotto/Faker>
+* Faker (user data) package: <https://github.com/fzaninotto/Faker>
