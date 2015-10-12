@@ -25,24 +25,29 @@
   			<option value="verylong">Very long</option>
 		</select> 
 		<br>
+		<p class="include">Include:</p>
+		<input type="checkbox" name="headers" value="headers"> Headers
+		<br>
+		<input type="checkbox" name="unordered" value="unordered"> Unordered Lists 
+		<br>
+		<input type="checkbox" name="ordered" value="ordered"> Ordered Lists
+		<br>
+		<input type="checkbox" name="descript" value="descript"> Description Lists
+		<br>
+		<input type="checkbox" name="quote" value="quote"> Block Quotes
+		<br>
+		<input type="checkbox" name="code" value="code"> Code Samples
+		<br>
+		<input type="checkbox" name="bold" value="bold"> Bold and Italic Text
+		<br>
+		<input type="checkbox" name="links" value="links"> Links
+		<br>
+		<input type="checkbox" name="caps" value="caps"> All Caps
+		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Lorem Ipsum">
 		<div class="output">
 		    @if($text)
-        	 	<?php 
-        	 				/*ob_start();
-				eval($text);
-				$this_string = ob_get_contents();
-				ob_end_clean();*/
-				
-        	 	
-        	 	//eval("\$text = \"$text\";"); 
-$str = "Lipsum::headers()->link()->ul()->html(3);";
-
-//eval('echo Lipsum::headers()->link()->ul()->html(3);');
-eval("echo $str");
-        	 	eval("echo $text");
-        	 	
-        	 	?>
+        	 	<?php eval("echo $text"); ?>
     		@else
          	<p>Your lorem ipsum will appear here!</p>
     		@endif

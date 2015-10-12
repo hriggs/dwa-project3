@@ -27,9 +27,7 @@ Route::get("/test", function () {
 				eval($text);
 				$this_string = ob_get_contents();
 				ob_end_clean();*/
-				
-				print_r($text);
-        	 	
+
         	 	eval('echo Lipsum::headers()->link()->ul()->html(3);');
 });
 

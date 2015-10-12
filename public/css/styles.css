@@ -79,6 +79,12 @@ footer a {
 	clear: both;
 }
 
+.include {
+	font-weight: bold;
+	margin-top: 1em;
+	font-size: 150%;
+}
+
 .output {
 	border: 2px solid #606060;
 	padding: 1em;

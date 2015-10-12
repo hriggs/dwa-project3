@@ -23,12 +23,7 @@ Route::controller("/password","PasswordController");
 
 Route::get("/test", function () {
 
-        	 				/*ob_start();
-				eval($text);
-				$this_string = ob_get_contents();
-				ob_end_clean();*/
-
-        	 	eval('echo Lipsum::headers()->link()->ul()->html(3);');
+        	 	return "test";
 });
 
 Route::controller("/", "IndexController");

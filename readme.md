@@ -17,3 +17,4 @@ tool to generate random user data.
 ## Outside code
 * Bootstrap: <http://getbootstrap.com/>
 * Icon: <https://icons8.com/>
+* laravel-lipsum package: <http://packalyst.com/packages/package/magyarjeti/laravel-lipsum>
