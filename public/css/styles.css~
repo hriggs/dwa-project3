@@ -82,7 +82,7 @@ footer a {
 .include {
 	font-weight: bold;
 	margin-top: 1em;
-	font-size: 120%;
+	font-size: 150%;
 }
 
 .output {
