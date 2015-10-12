@@ -13,37 +13,37 @@
 @stop
 
 @section('content')
-	<form method="GET" action="index.php">
+	<form method="GET" action="#">
 		<label>Number of Words:</label>
 			<div class="br">
 				<br>
 			</div>
-		<input maxlength=1 type="text" name="word_num" value="4" class="form-box">
+		<input maxlength=1 type="text" name="word_num" class="form-box">
 		<br>
 		<label>Number of Numbers:</label>
 		<div class="br">
 			<br>
 		</div>
-		<input maxlength=1 type="text" name="number_num" value="1" class="form-box">
+		<input maxlength=1 type="text" name="number_num" class="form-box">
 		<br>
 		<label>Number Location:</label>
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="number_loc" value="end" checked>At End 
+		<input type="radio" name="number_loc" value="end">At End 
 		<input type="radio" name="number_loc" value="random">Random
 		<br>
 		<label>Number of Symbols:</label>
 		<div class="br">
 			<br>
 		</div>
-		<input maxlength=1 type="text" name="symbol_num" value="1" class="form-box">
+		<input maxlength=1 type="text" name="symbol_num" class="form-box">
 		<br>
 		<label>Symbol Location:</label>
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="symbol_loc" value="end" checked>At End 
+		<input type="radio" name="symbol_loc" value="end">At End 
 		<input type="radio" name="symbol_loc" value="random">Random
 		<br>
 		<label>Separate Words with:</label>
@@ -68,4 +68,7 @@
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Password">
 	</form>
+	<div class="output">
+	password here
+	</div>
 @stop

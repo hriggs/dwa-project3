@@ -19,4 +19,6 @@ Route::controller("/lorem-ipsum","LoremIpsumController");
 
 Route::controller("/random-user","RandomUserController");
 
+Route::controller("/password","PasswordController");
+
 Route::controller("/", "IndexController");

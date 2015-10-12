@@ -75,25 +75,25 @@ footer a {
 	color: #286090;
 }
 
-/*.side {
-	background-color: yellow;
-}
-
-.middle {
-	background-color: green;
-}*/
-
 .clearfix {
 	clear: both;
+}
+
+.password {
+	margin: 2em 0 0 0;
+	padding: 1em;
+	border: 2px solid #606060;
+}
+
+.output {
+	border: 2px solid #606060;
+	padding: 1em;
+	margin: 2em 0 0 0;
 }
 
 /* Responsive Styles */
 
 @media (max-width: 1350px) {
-
-body {
-background-color: yellow;
-}
 
 	.home-button {
 		font-size: 85%;
@@ -102,10 +102,6 @@ background-color: yellow;
 
 @media (max-width: 980px) {
 
-body {
-background-color: red;
-}
-
 	.home-button {
 		font-size: 80%;
 	}
@@ -113,25 +109,17 @@ background-color: red;
 
 @media (max-width: 960px) {
 
-body {
-background-color: pink;
-}
-
 	.home-button {
 		font-size: 90%;
 	}
 }
 
 @media (max-width: 830px) {
-	
-	body {
-background-color: orange;
-}
 
-.buttons {
-	width: 40%;
-	margin: 0 30%;
-}
+	.buttons {
+		width: 40%;
+		margin: 0 30%;
+	}
 
 	.br-home {
 		display: block;
@@ -141,10 +129,6 @@ background-color: orange;
 
 @media (max-width: 800px) {
 	
-	body {
-background-color: green;
-}
-
 	.br {
 		display: block;
 	}
@@ -156,22 +140,14 @@ background-color: green;
 
 @media (max-width: 600px) {
 	
-	body {
-	background-color: silver;
-	}
-	
 	.buttons {
-	width: 60%;
-	margin: 0 20%;
-}
+		width: 60%;
+		margin: 0 20%;
+	}
 	
 }
 
 @media (max-width: 500px) {
-	
-	body {
-	background-color: purple;
-	}
 	
 	.buttons {
 		width: 70%;
@@ -190,10 +166,6 @@ background-color: green;
 
 @media (max-width: 400px) {
 	
-	body {
-	background-color: black;
-	}
-	
 	.buttons {
 		width: 80%;
 		margin: 0 10%;
@@ -209,10 +181,6 @@ background-color: green;
 }
 
 @media (max-width: 300px) {
-	
-	body {
-	background-color: yellow;
-	}
 	
 	.buttons {
 		width: 95%;

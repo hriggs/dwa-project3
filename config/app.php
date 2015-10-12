@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         
         Barryvdh\Debugbar\ServiceProvider::class,
+        'Magyarjeti\LaravelLipsum\LipsumServiceProvider',
 
     ],
 
@@ -197,6 +198,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Lipsum' => 'Magyarjeti\LaravelLipsum\LipsumFacade',
 
     ],
 

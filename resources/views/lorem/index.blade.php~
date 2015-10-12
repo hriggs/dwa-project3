@@ -13,11 +13,26 @@
 @stop
 
 @section('content')
-	<form>
+	<form method="GET" action="#">
 		<label>Number of Paragraphs:</label>
-		<input maxlength=1 type="text" name="para_num" class="form_box">
+		<input maxlength=1 type="text" name="para_num" class="form-box">
+		<br>
+		<label>Paragraph length:</label>
+		<select name="length" value="<?php echo isset($_GET['length']) ? $_GET['length'] : '' ?>" class="form-box">
+			<option value="short">Short</option>
+  			<option value="medium">Medium</option>
+  			<option value="long">Long</option>
+  			<option value="verylong">Very long</option>
+		</select> 
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Lorem Ipsum">
+		<div class="output">
+		    @if($text)
+        	 	<div>Show book: {{ $text }}</div>
+    		@else
+         	<p>Your lorem ipsum will appear here!</p>
+    		@endif
+		</div>
 	</form>
 @stop
 
