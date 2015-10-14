@@ -13,7 +13,8 @@
 @stop
 
 @section('content')
-	<form method="GET" action="#">
+	<form method="POST" action="/lorem-ipsum">
+		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Paragraphs:</label>
 		<input maxlength=1 type="text" name="para_num" class="form-box">
 		<br>

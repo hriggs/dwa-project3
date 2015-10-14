@@ -13,7 +13,8 @@
 @stop
 
 @section('content')
-	<form method="GET" action="#">
+	<form method="POST" action="/password">
+	<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Words:</label>
 			<div class="br">
 				<br>

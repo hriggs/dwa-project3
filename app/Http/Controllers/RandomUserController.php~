@@ -25,6 +25,6 @@ class RandomUserController extends Controller {
     		// create faker instance
     		$faker = Faker::create();
 
-			return $faker->dateTimeThisCentury;
+			return $faker->dateTimeThisCentury->format('Y-m-d');
     }
 }

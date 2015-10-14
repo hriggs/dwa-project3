@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-	<form method="GET" action="#">
+	<form method="POST" action="/password">
 		<label>Number of Words:</label>
 			<div class="br">
 				<br>
@@ -68,7 +68,7 @@
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Password">
 	</form>
-	<div class="password">
+	<div class="output">
 	password here
 	</div>
 @stop

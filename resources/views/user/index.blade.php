@@ -13,7 +13,8 @@
 @stop
 
 @section('content')
-	<form>
+	<form method="POST" action="/random-user">
+		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Users:</label>
 		<input maxlength=1 type="text" name="user_num" class="form-box">
 		<br>

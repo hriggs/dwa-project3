@@ -19,6 +19,14 @@ class RandomUserController extends Controller {
     }
     
    /**
+    * Responds to requests to POST /random-user
+    */
+    public function postIndex() {
+
+      	return view("user.index")->with('text', $this->generateUserData());
+    }
+    
+   /**
     * Generate user data based on user input
     */
     public function generateUserData() {

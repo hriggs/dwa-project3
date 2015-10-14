@@ -10,14 +10,21 @@ class LoremIpsumController extends Controller {
         # Put anything here that should happen before any of the other actions
     }
     
-    /**
+   /**
     * Responds to requests to GET /lorem-ipsum
     */
     public function getIndex() {
         return view("lorem.index")->with('text', $this->generateLorem());
     }
     
-    /**
+   /**
+    * Responds to requests to POST /lorem-ipsum
+    */
+    public function postIndex() {
+        return view("lorem.index")->with('text', $this->generateLorem());
+    }
+    
+   /**
     * Generate lorem ipsum based on user input
     */
     public function generateLorem() {

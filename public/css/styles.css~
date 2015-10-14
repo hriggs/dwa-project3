@@ -36,6 +36,7 @@ h2 {
 
 .content {
 	background-color: #fefefe;
+	min-height: 100%;
 }
 
 form {
@@ -88,7 +89,7 @@ footer a {
 .output {
 	border: 2px solid #606060;
 	padding: 1em;
-	margin: 2em 0 0 0;
+	margin: 3em 0 0 0;
 }
 
 /* Responsive Styles */
