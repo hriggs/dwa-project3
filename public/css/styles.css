@@ -64,6 +64,11 @@ input {
 	border-color: #12a89d;
 }
 
+.user {
+	font-weight: bold;
+	color: yellow;
+}
+
 footer {
 	text-align: center;
 	border-top: 5px solid #286090;

@@ -16,29 +16,23 @@
 	<form method="POST" action="/random-user">
 		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Users:</label>
-		<input maxlength=1 type="text" name="user_num" class="form-box">
+		<input maxlength=1 type="text" name="users" class="form-box" required>
 		<br>
 		<p class="include">Optional Includes:</p>
-		<input type="checkbox" name="address" value="address"> Address
+		<input type="checkbox" name="address"> Address
 		<br>
-		<input type="checkbox" name="number" value="number"> Phone Number
+		<input type="checkbox" name="phoneNumber"> Phone Number
 		<br>
-		<input type="checkbox" name="email" value="email"> E-mail
+		<input type="checkbox" name="freeEmail"> E-mail
 		<br>
-		<input type="checkbox" name="birthday" value="birthday"> Birthday
+		<input type="checkbox" name="birthday"> Birthday
 		<br>
-		<input type="checkbox" name="company" value="company"> Company
-		<br>
-		<input type="checkbox" name="blurb" value="blurb"> Profile Blurb
+		<input type="checkbox" name="text"> Profile Blurb
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Random Users">
 	</form>
 	<div class="output">
-		    @if($text)
-        	 	<?php echo $text; ?>
-    		@else
-         	<p>Your random users will appear here!</p>
-    		@endif
+   	<?php echo $text; ?>
 	</div>
 @stop
 

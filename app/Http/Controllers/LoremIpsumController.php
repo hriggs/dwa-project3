@@ -59,12 +59,8 @@ class LoremIpsumController extends Controller {
     		
     		// add paragraph number at end
     		$lorem .= $para_num;
-
-    		print_r($lorem);
     		
     		return view("lorem.index")->with("text", eval($lorem));
-    		
-    		//return view("lorem.index")->with('text', $this->generateLorem());
     }
     
    /**
