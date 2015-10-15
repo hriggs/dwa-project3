@@ -48,7 +48,7 @@
 		<input type="submit" class="btn btn-primary submit" value="Generate Lorem Ipsum">
 		<div class="output">
 		    @if($text)
-        	 	<?php eval("echo $text"); ?>
+        	 	<?php echo $text; ?>
     		@else
          	<p>Your lorem ipsum will appear here!</p>
     		@endif

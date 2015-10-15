@@ -16,7 +16,7 @@ class LoremIpsumController extends Controller {
     * Responds to requests to GET /lorem-ipsum
     */
     public function getIndex() {
-        return view("lorem.index")->with('text', $this->generateLorem());
+        return view("lorem.index")->with('text', "");
     }
     
    /**
@@ -30,7 +30,7 @@ class LoremIpsumController extends Controller {
         		"para_num" => "required"
     		]);*/
     		
-    		$lorem = "Lipsum::";
+    		$lorem = "return Lipsum::";
     		$para_num = "";
     		
     		// for every request item
@@ -59,10 +59,10 @@ class LoremIpsumController extends Controller {
     		
     		// add paragraph number at end
     		$lorem .= $para_num;
-    		
+
     		print_r($lorem);
     		
-    		return view("lorem.index")->with('text', $lorem);
+    		return view("lorem.index")->with("text", eval($lorem));
     		
     		//return view("lorem.index")->with('text', $this->generateLorem());
     }
