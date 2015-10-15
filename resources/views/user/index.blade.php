@@ -19,7 +19,7 @@
 		<input maxlength=1 type="text" name="user_num" class="form-box">
 		<br>
 		<p class="include">Optional Includes:</p>
-		<input type="checkbox" name="address" value="adress"> Address
+		<input type="checkbox" name="address" value="address"> Address
 		<br>
 		<input type="checkbox" name="number" value="number"> Phone Number
 		<br>

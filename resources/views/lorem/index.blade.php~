@@ -16,34 +16,34 @@
 	<form method="POST" action="/lorem-ipsum">
 		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Paragraphs:</label>
-		<input maxlength=1 type="text" name="para_num" class="form-box">
+		<input maxlength=1 type="text" name="para" class="form-box" required>
 		<br>
 		<label>Paragraph length:</label>
-		<select name="length" value="<?php echo isset($_GET['length']) ? $_GET['length'] : '' ?>" class="form-box">
-			<option value="short">Short</option>
-  			<option value="medium">Medium</option>
-  			<option value="long">Long</option>
-  			<option value="verylong">Very long</option>
+		<select name="length" class="form-box">
+			<option name="short" value="short">Short</option>
+  			<option name="medium" value="medium">Medium</option>
+  			<option name="long" value="long">Long</option>
+  			<option name="verylong" value="verylong">Very long</option>
 		</select> 
 		<br>
 		<p class="include">Optional Includes:</p>
-		<input type="checkbox" name="headers" value="headers"> Headers
+		<input type="checkbox" name="headers"> Headers
 		<br>
-		<input type="checkbox" name="unordered" value="unordered"> Unordered Lists 
+		<input type="checkbox" name="ul"> Unordered Lists 
 		<br>
-		<input type="checkbox" name="ordered" value="ordered"> Ordered Lists
+		<input type="checkbox" name="ol"> Ordered Lists
 		<br>
-		<input type="checkbox" name="descript" value="descript"> Description Lists
+		<input type="checkbox" name="dl"> Description Lists
 		<br>
-		<input type="checkbox" name="quote" value="quote"> Block Quotes
+		<input type="checkbox" name="bq"> Block Quotes
 		<br>
-		<input type="checkbox" name="code" value="code"> Code Samples
+		<input type="checkbox" name="code"> Code Samples
 		<br>
-		<input type="checkbox" name="bold" value="bold"> Bold and Italic Text
+		<input type="checkbox" name="decorate"> Bold and Italic Text
 		<br>
-		<input type="checkbox" name="links" value="links"> Links
+		<input type="checkbox" name="link"> Links
 		<br>
-		<input type="checkbox" name="caps" value="caps"> All Caps
+		<input type="checkbox" name="allcaps"> All Caps
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Lorem Ipsum">
 		<div class="output">
