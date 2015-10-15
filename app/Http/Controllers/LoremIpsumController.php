@@ -33,34 +33,38 @@ class LoremIpsumController extends Controller {
     		$lorem = "Lipsum::";
     		$para_num = "";
     		
+    		// for every request item
     		Foreach (Request::all() as $key => $value) {
     			
-    			echo $key;
-    			
+    			// if key only contains alphabetical characters
 				if (ctype_alpha($key)) {
 					
 					if ($key === "para") {
+						
+						// add number of paragraphs
 						$para_num .= "html(" . $value . ");";
-						print_r($para_num);
+						
 					} elseif ($key === "length") {
+						
+						// add length of paragraphs
 						$lorem .= $value . "()->";
 						
 					} else {
+						
+						// add keys to specify which features to add
 						$lorem .= $key . "()->";
 					}
 				}
     		}
     		
+    		// add paragraph number at end
     		$lorem .= $para_num;
     		
     		print_r($lorem);
     		
     		return view("lorem.index")->with('text', $lorem);
-
     		
-    		//print_r($input);
-    		
-    		return view("lorem.index")->with('text', $this->generateLorem());
+    		//return view("lorem.index")->with('text', $this->generateLorem());
     }
     
    /**
