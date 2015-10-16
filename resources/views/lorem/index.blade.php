@@ -16,7 +16,7 @@
 	<form method="POST" action="/lorem-ipsum">
 		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Paragraphs:</label>
-		<input maxlength=1 type="text" name="para" class="form-box" required>
+		<input maxlength=1 type="text" name="para" class="form-box" value="{{ $data['para'] }}" required>
 		<br>
 		<label>Paragraph length:</label>
 		<select name="length" class="form-box">
@@ -27,7 +27,7 @@
 		</select> 
 		<br>
 		<p class="include">Optional Includes:</p>
-		<input type="checkbox" name="headers"> Headers
+		<input type="checkbox" name="headers" {{ $data['hi'] or "unchecked"}}> Headers
 		<br>
 		<input type="checkbox" name="ul"> Unordered Lists 
 		<br>
@@ -47,7 +47,7 @@
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Lorem Ipsum">
 		<div class="output">
-      	<?php echo $text; ?>
+      	{!! $output !!}
 		</div>
 	</form>
 @stop

@@ -19,8 +19,8 @@
 			<div class="br">
 				<br>
 			</div>
-		<input maxlength=1 type="text" name="word_num" class="form-box">
-		<br>
+		<input maxlength=1 type="text" name="word_num" class="form-box" required>
+		<p class="include">Optional Includes:</p>
 		<label>Number of Numbers:</label>
 		<div class="br">
 			<br>

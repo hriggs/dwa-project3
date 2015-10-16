@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-//use Illuminate\Http\Request as req;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Request;
 use Lipsum;
 
 class LoremIpsumController extends Controller {
@@ -16,7 +16,11 @@ class LoremIpsumController extends Controller {
     * Responds to requests to GET /lorem-ipsum
     */
     public function getIndex() {
-        return view("lorem.index")->with('text', "Your lorem ipsum will appear here.");
+    	
+    	$data = array("hi" => "",
+    						  "para" => "");
+    	
+        return view("lorem.index")->with("output", "Lorem ipsum will appear here.")->with("data", $data);
     }
     
    /**
@@ -34,7 +38,7 @@ class LoremIpsumController extends Controller {
     		$para_num = "";
     		
     		// for every request item
-    		Foreach (Request::all() as $key => $value) {
+    		Foreach ($request->all() as $key => $value) {
     			
     			// if key only contains alphabetical characters
 				if (ctype_alpha($key)) {
@@ -60,20 +64,25 @@ class LoremIpsumController extends Controller {
     		// add paragraph number at end
     		$lorem .= $para_num;
     		
-    		return view("lorem.index")->with("text", eval($lorem));
+    		$data = array("hi" => "checked",
+    						  "para" => 3);
+    						  
+    		print_r(isset($request->input("ul")));
+    		
+    		/*if ($request->input("para") != "") {
+    			$data["para"] = $request->input("para");
+    		}*/
+
+    		
+    						  
+    		return view("lorem.index")->with("output", eval($lorem))->with("data", $data);
     }
     
    /**
     * Generate lorem ipsum based on user input
     */
     public function generateLorem() {
-    	
-    	
-    	
-    	//$lorem = "Lipsum::headers()->link()->ul()->html(3);";
-    	$lorem = "Lipsum::";
-    	$lorem .= "headers()->link()->code()->ul()->html(1);";
 
-		return $lorem;
+		return "";
     }
 }

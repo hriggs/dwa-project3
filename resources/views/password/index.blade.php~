@@ -14,12 +14,13 @@
 
 @section('content')
 	<form method="POST" action="/password">
+	<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Words:</label>
 			<div class="br">
 				<br>
 			</div>
 		<input maxlength=1 type="text" name="word_num" class="form-box">
-		<br>
+		<p class="include">Optional Includes:</p>
 		<label>Number of Numbers:</label>
 		<div class="br">
 			<br>

@@ -66,7 +66,6 @@ input {
 
 .user {
 	font-weight: bold;
-	color: yellow;
 }
 
 footer {
@@ -88,6 +87,10 @@ footer a {
 	font-weight: bold;
 	margin-top: 1em;
 	font-size: 150%;
+}
+
+span .user {
+	font-weight: bold;
 }
 
 .output {

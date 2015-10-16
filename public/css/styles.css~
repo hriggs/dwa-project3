@@ -89,6 +89,11 @@ footer a {
 	font-size: 150%;
 }
 
+span .user {
+	font-weight: bold;
+	font-size: 500%;
+}
+
 .output {
 	border: 2px solid #606060;
 	padding: 1em;

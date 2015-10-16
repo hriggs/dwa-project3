@@ -48,36 +48,37 @@ class RandomUserController extends Controller {
 					}
 				}
     		}
-    		
-    		var_dump($options);
-    		
+
     		// generate user data
     		for ($i = 0; $i < $users; $i++) {
     			
     			// add user name
-    			$data .= "<p><span class='user'>" . $faker->name . "</span></p>";
+    			$data .= "<p><span class='user'>" . $faker->name . "</span></p><ul>";
     			
     			// add extra options
     			for ($j = 0; $j < count($options); $j++) {
     				
-    				echo $options[$j];
-    				
     				if ($options[$j] === "birthday") {
     					
     					// add user birthday
-    					$data .= "<p>" . $faker->dateTimeThisCentury->format('Y-m-d') . "</p>";
+    					$data .= "<li>" . $faker->dateTimeThisCentury->format('Y-m-d') . "</li>";
     				} elseif ($options[$j] === "text") {
     					
     					// add profile blurb
-    					$data .= "<p>" . $faker->text($maxNbChars = 200) . "</p>";
+    					$data .= "<li>Profile: " . $faker->text($maxNbChars = 200) . "</li>";
     				} else {
     					
     					// add other options
-    					$data .= "<p>" . $faker->$key . "</p>";
+    					$data .= "<li>" . $faker->$options[$j] . "</li>";
     				}
     			}
     			
-    			$data .= "<br>";
+    			$data .= "</ul>"
+    			
+    			// do not add 2 breaks after last user data
+    			if ($i < $users - 1) {
+    				$data .= "<br><br>";
+    			}
     		
     		}
 
