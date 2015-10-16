@@ -27,23 +27,23 @@
 		</select> 
 		<br>
 		<p class="include">Optional Includes:</p>
-		<input type="checkbox" name="headers" {{ $data['hi'] or "unchecked"}}> Headers
+		<input type="checkbox" name="headers" {{ $data['headers'] }}> Headers
 		<br>
-		<input type="checkbox" name="ul"> Unordered Lists 
+		<input type="checkbox" name="ul" {{ $data['ul'] }}> Unordered Lists 
 		<br>
-		<input type="checkbox" name="ol"> Ordered Lists
+		<input type="checkbox" name="ol" {{ $data['ol'] }}> Ordered Lists
 		<br>
-		<input type="checkbox" name="dl"> Description Lists
+		<input type="checkbox" name="dl" {{ $data['dl'] }}> Description Lists
 		<br>
-		<input type="checkbox" name="bq"> Block Quotes
+		<input type="checkbox" name="bq" {{ $data['bq'] }}> Block Quotes
 		<br>
-		<input type="checkbox" name="code"> Code Samples
+		<input type="checkbox" name="code" {{ $data['code'] }}> Code Samples
 		<br>
-		<input type="checkbox" name="decorate"> Bold and Italic Text
+		<input type="checkbox" name="decorate" {{ $data['decorate'] }}> Bold and Italic Text
 		<br>
-		<input type="checkbox" name="link"> Links
+		<input type="checkbox" name="link" {{ $data['link'] }}> Links
 		<br>
-		<input type="checkbox" name="allcaps"> All Caps
+		<input type="checkbox" name="allcaps" {{ $data['allcaps'] }}> All Caps
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Lorem Ipsum">
 		<div class="output">

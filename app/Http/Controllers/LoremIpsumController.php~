@@ -17,8 +17,17 @@ class LoremIpsumController extends Controller {
     */
     public function getIndex() {
     	
-    	$data = array("hi" => "",
-    						  "para" => "");
+    	$data = array("para" => "",
+    					  "headers" => "",
+    					  "ul" => "",
+    					  "ol" => "",
+    					  "dl" => "",
+    					  "bq" => "",
+    					  "code" => "",
+    					  "decorate" => "",
+    					  "link" => "",
+    					  "allcaps" => ""
+    					  );
     	
         return view("lorem.index")->with("output", "Lorem ipsum will appear here.")->with("data", $data);
     }
@@ -64,18 +73,30 @@ class LoremIpsumController extends Controller {
     		// add paragraph number at end
     		$lorem .= $para_num;
     		
-    		$data = array("hi" => "checked",
-    						  "para" => 3);
-    						  
-    		print_r(isset($request->input("ul")));
+    		$data = [];
     		
-    		/*if ($request->input("para") != "") {
-    			$data["para"] = $request->input("para");
-    		}*/
-
+    		$request->has("para") ? ($data["para"] = $request->input("para")) : ($data["para"] = ""); 
+			// para length
+			/*$this->test($request, "ol", $data);
+			print_r($data);*/
+    		$request->has("headers") ? ($data["headers"] = "checked") : ($data["headers"] = ""); 
+    		$request->has("ul") ? ($data["ul"] = "checked") : ($data["ul"] = ""); 
+    		$request->has("ol") ? ($data["ol"] = "checked") : ($data["ol"] = ""); 
+    		$request->has("dl") ? ($data["dl"] = "checked") : ($data["dl"] = ""); 
+    		$request->has("bq") ? ($data["bq"] = "checked") : ($data["bq"] = ""); 
+    		$request->has("code") ? ($data["code"] = "checked") : ($data["code"] = ""); 
+    		$request->has("decorate") ? ($data["decorate"] = "checked") : ($data["decorate"] = ""); 
+    		$request->has("link") ? ($data["link"] = "checked") : ($data["link"] = ""); 
+    		$request->has("allcaps") ? ($data["allcaps"] = "checked") : ($data["allcaps"] = ""); 
+    		
+    		print_r($data);
     		
     						  
     		return view("lorem.index")->with("output", eval($lorem))->with("data", $data);
+    }
+    
+    public function test(Request $request, $name, $array) {
+    		return $request->has($name) ? ($array[$name] = $request->input($name)) : ($array[$name] = "");
     }
     
    /**
