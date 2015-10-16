@@ -15,9 +15,59 @@ class LoremIpsumController extends Controller {
    /**
     * Responds to requests to GET /lorem-ipsum
     */
-    public function getIndex() {
+    public function getIndex(Request $request) {
     	
-    	$data = array("para" => "",
+        return view("lorem.index")->with("output", "Lorem ipsum will appear here.")->with("data", $this->getFormData($request));
+    }
+    
+   /**
+    * Responds to requests to POST /lorem-ipsum
+    */
+    public function postIndex(Request $request) {
+    		
+    		// Validate the request data
+    		/*$this->validate($request, [
+        		"para_num" => "required"
+    		]);*/
+    						  
+    		return view("lorem.index")->with("output", eval($this->getLorem($request)))->with("data", $this->getFormData($request));
+    }
+    
+   /**
+    * Stores the values to be displayed/checked/selected on the form based on request data
+    */
+    private function getFormData(Request $request) {
+    	
+    		$data = [];
+    	
+    		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    			
+    			// store user input values if post
+    			
+    			// paragraph number
+    			$request->has("para") ? ($data["para"] = $request->input("para")) : ($data["para"] = "");
+    		
+    			// paragraph length 
+				$request->input("length") === "short" ? ($data["short"] = "selected") : ($data["short"] = "");
+				$request->input("length") === "medium" ? ($data["medium"] = "selected") : ($data["medium"] = ""); 
+				$request->input("length") === "long" ? ($data["long"] = "selected") : ($data["long"] = "");
+				$request->input("length") === "verylong" ? ($data["verylong"] = "selected") : ($data["verylong"] = ""); 
+			
+				// optional values
+    			$request->has("headers") ? ($data["headers"] = "checked") : ($data["headers"] = ""); 
+    			$request->has("ul") ? ($data["ul"] = "checked") : ($data["ul"] = ""); 
+    			$request->has("ol") ? ($data["ol"] = "checked") : ($data["ol"] = ""); 
+    			$request->has("dl") ? ($data["dl"] = "checked") : ($data["dl"] = ""); 
+    			$request->has("bq") ? ($data["bq"] = "checked") : ($data["bq"] = ""); 
+    			$request->has("code") ? ($data["code"] = "checked") : ($data["code"] = ""); 
+    			$request->has("decorate") ? ($data["decorate"] = "checked") : ($data["decorate"] = ""); 
+    			$request->has("link") ? ($data["link"] = "checked") : ($data["link"] = ""); 
+    			$request->has("allcaps") ? ($data["allcaps"] = "checked") : ($data["allcaps"] = ""); 
+    			
+			} elseif($_SERVER['REQUEST_METHOD'] === 'GET') {
+				
+				// store blank/default values if get
+				$data = array("para" => "",
     					  "headers" => "",
     					  "short" => "selected",
     					  "medium" => "",
@@ -32,21 +82,16 @@ class LoremIpsumController extends Controller {
     					  "link" => "",
     					  "allcaps" => ""
     					  );
-    	
-        return view("lorem.index")->with("output", "Lorem ipsum will appear here.")->with("data", $data);
+			}
+			
+			return $data;
     }
     
    /**
-    * Responds to requests to POST /lorem-ipsum
+    * Generate lorem ipsum based on user input
     */
-    public function postIndex(Request $request) {
-    		
-    		//return $request["para_num"];
-    		// Validate the request data
-    		/*$this->validate($request, [
-        		"para_num" => "required"
-    		]);*/
-    		
+    public function getLorem(Request $request) {
+    	
     		$lorem = "return Lipsum::";
     		$para_num = "";
     		
@@ -76,41 +121,7 @@ class LoremIpsumController extends Controller {
     		
     		// add paragraph number at end
     		$lorem .= $para_num;
-    		
-    		$data = [];
-    		
-    		$request->has("para") ? ($data["para"] = $request->input("para")) : ($data["para"] = ""); 
-			
-			/*$request->has("short") ? ($data["short"] = "selected") : ($data["short"] = ""); */
-			$request->input("length") === "short" ? ($data["short"] = "selected") : ($data["short"] = "");
-			$request->input("length") === "medium" ? ($data["medium"] = "selected") : ($data["medium"] = ""); 
-			$request->input("length") === "long" ? ($data["long"] = "selected") : ($data["long"] = "");
-			$request->input("length") === "verylong" ? ($data["verylong"] = "selected") : ($data["verylong"] = ""); 
-    		$request->has("headers") ? ($data["headers"] = "checked") : ($data["headers"] = ""); 
-    		$request->has("ul") ? ($data["ul"] = "checked") : ($data["ul"] = ""); 
-    		$request->has("ol") ? ($data["ol"] = "checked") : ($data["ol"] = ""); 
-    		$request->has("dl") ? ($data["dl"] = "checked") : ($data["dl"] = ""); 
-    		$request->has("bq") ? ($data["bq"] = "checked") : ($data["bq"] = ""); 
-    		$request->has("code") ? ($data["code"] = "checked") : ($data["code"] = ""); 
-    		$request->has("decorate") ? ($data["decorate"] = "checked") : ($data["decorate"] = ""); 
-    		$request->has("link") ? ($data["link"] = "checked") : ($data["link"] = ""); 
-    		$request->has("allcaps") ? ($data["allcaps"] = "checked") : ($data["allcaps"] = ""); 
-    		
-    		print_r($data);
-    		print_r($request->input("length"));
-    						  
-    		return view("lorem.index")->with("output", eval($lorem))->with("data", $data);
-    }
-    
-    public function test(Request $request, $name, $array) {
-    		return $request->has($name) ? ($array[$name] = $request->input($name)) : ($array[$name] = "");
-    }
-    
-   /**
-    * Generate lorem ipsum based on user input
-    */
-    public function generateLorem() {
 
-		return "";
+		return $lorem;
     }
 }
