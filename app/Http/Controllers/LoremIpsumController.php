@@ -19,6 +19,10 @@ class LoremIpsumController extends Controller {
     	
     	$data = array("para" => "",
     					  "headers" => "",
+    					  "short" => "selected",
+    					  "medium" => "",
+    					  "long" => "",
+    					  "verylong" => "",
     					  "ul" => "",
     					  "ol" => "",
     					  "dl" => "",
@@ -76,9 +80,12 @@ class LoremIpsumController extends Controller {
     		$data = [];
     		
     		$request->has("para") ? ($data["para"] = $request->input("para")) : ($data["para"] = ""); 
-			// para length
-			/*$this->test($request, "ol", $data);
-			print_r($data);*/
+			
+			/*$request->has("short") ? ($data["short"] = "selected") : ($data["short"] = ""); */
+			$request->input("length") === "short" ? ($data["short"] = "selected") : ($data["short"] = "");
+			$request->input("length") === "medium" ? ($data["medium"] = "selected") : ($data["medium"] = ""); 
+			$request->input("length") === "long" ? ($data["long"] = "selected") : ($data["long"] = "");
+			$request->input("length") === "verylong" ? ($data["verylong"] = "selected") : ($data["verylong"] = ""); 
     		$request->has("headers") ? ($data["headers"] = "checked") : ($data["headers"] = ""); 
     		$request->has("ul") ? ($data["ul"] = "checked") : ($data["ul"] = ""); 
     		$request->has("ol") ? ($data["ol"] = "checked") : ($data["ol"] = ""); 
@@ -90,6 +97,7 @@ class LoremIpsumController extends Controller {
     		$request->has("allcaps") ? ($data["allcaps"] = "checked") : ($data["allcaps"] = ""); 
     		
     		print_r($data);
+    		print_r($request->input("length"));
     						  
     		return view("lorem.index")->with("output", eval($lorem))->with("data", $data);
     }
