@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
+//use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 use Faker\Factory as Faker;
 
 class RandomUserController extends Controller {
@@ -14,15 +15,23 @@ class RandomUserController extends Controller {
    /**
     * Responds to requests to GET /random-user
     */
-    public function getIndex() {
+    public function getIndex(Request $request) {
 
-      	return view("user.index")->with('text', "User data will appear here.");
+      	return view("user.index")->with('text', "User data will appear here.")->with('data', $this->getFormData($request));
     }
     
    /**
     * Responds to requests to POST /random-user
     */
     public function postIndex(Request $request) {
+
+      	return view("user.index")->with('text', $this->getUserData($request))->with('data', $this->getFormData($request));
+    }
+    
+   /**
+    * Generate user data based on user input
+    */
+    public function getUserData(Request $request) {
     	
     		// create faker instance
     		$faker = Faker::create();
@@ -32,7 +41,7 @@ class RandomUserController extends Controller {
     		$options = [];
     		
     		// for every request item
-    		Foreach (Request::all() as $key => $value) {
+    		Foreach ($request->all() as $key => $value) {
     			
     			// if key only contains alphabetical characters
 				if (ctype_alpha($key)) {
@@ -73,7 +82,7 @@ class RandomUserController extends Controller {
     				}
     			}
     			
-    			$data .= "</ul>"
+    			$data .= "</ul>";
     			
     			// do not add 2 breaks after last user data
     			if ($i < $users - 1) {
@@ -81,18 +90,43 @@ class RandomUserController extends Controller {
     			}
     		
     		}
-
-      	return view("user.index")->with('text', $data);
+    	
+			return $data;
     }
     
    /**
-    * Generate user data based on user input
+    * Stores and returns the values to be displayed/checked/selected on the form based on request data
     */
-    public function generateUserData() {
-    		// create faker instance
-    		$faker = Faker::create();
-    		// text($maxNbChars = 200)
-
-			return $faker->dateTimeThisCentury->format('Y-m-d');
+    private function getFormData(Request $request) {
+    	
+    		$data = [];
+    	
+    		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    			
+    			// store user input values if request is POST
+    			
+    			// user number
+    			$request->has("users") ? ($data["para"] = $request->input("users")) : ($data["users"] = "");
+    		
+    			// optional values
+				$request->has("address") ? ($data["address"] = "checked") : ($data["address"] = ""); 
+				$request->has("phoneNumber") ? ($data["phoneNumber"] = "checked") : ($data["phoneNumber"] = ""); 
+				$request->has("freeEmail") ? ($data["freeEmail"] = "checked") : ($data["freeEmail"] = ""); 
+				$request->has("birthday") ? ($data["birthday"] = "checked") : ($data["birthday"] = ""); 
+				$request->has("text") ? ($data["text"] = "checked") : ($data["text"] = ""); 
+    			
+			} elseif($_SERVER['REQUEST_METHOD'] === 'GET') {
+				
+				// store blank/default values if request is GET
+				$data = array("users" => "",
+    					  "address" => "",
+    					  "phoneNumber" => "",
+    					  "freeEmail" => "",
+    					  "birthday" => "",
+    					  "text" => ""
+    					  );
+			}
+			
+			return $data;
     }
 }

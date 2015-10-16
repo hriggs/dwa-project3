@@ -34,7 +34,45 @@ class LoremIpsumController extends Controller {
     }
     
    /**
-    * Stores the values to be displayed/checked/selected on the form based on request data
+    * Generate lorem ipsum based on user input
+    */
+    public function getLorem(Request $request) {
+    	
+    		$lorem = "return Lipsum::";
+    		$para_num = "";
+    		
+    		// for every request item
+    		Foreach ($request->all() as $key => $value) {
+    			
+    			// if key only contains alphabetical characters
+				if (ctype_alpha($key)) {
+					
+					if ($key === "para") {
+						
+						// add number of paragraphs
+						$para_num .= "html(" . $value . ");";
+						
+					} elseif ($key === "length") {
+						
+						// add length of paragraphs
+						$lorem .= $value . "()->";
+						
+					} else {
+						
+						// add keys to specify which features to add
+						$lorem .= $key . "()->";
+					}
+				}
+    		}
+    		
+    		// add paragraph number at end
+    		$lorem .= $para_num;
+
+		return $lorem;
+    }
+    
+   /**
+    * Stores and returns the values to be displayed/checked/selected on the form based on request data
     */
     private function getFormData(Request $request) {
     	
@@ -85,43 +123,5 @@ class LoremIpsumController extends Controller {
 			}
 			
 			return $data;
-    }
-    
-   /**
-    * Generate lorem ipsum based on user input
-    */
-    public function getLorem(Request $request) {
-    	
-    		$lorem = "return Lipsum::";
-    		$para_num = "";
-    		
-    		// for every request item
-    		Foreach ($request->all() as $key => $value) {
-    			
-    			// if key only contains alphabetical characters
-				if (ctype_alpha($key)) {
-					
-					if ($key === "para") {
-						
-						// add number of paragraphs
-						$para_num .= "html(" . $value . ");";
-						
-					} elseif ($key === "length") {
-						
-						// add length of paragraphs
-						$lorem .= $value . "()->";
-						
-					} else {
-						
-						// add keys to specify which features to add
-						$lorem .= $key . "()->";
-					}
-				}
-    		}
-    		
-    		// add paragraph number at end
-    		$lorem .= $para_num;
-
-		return $lorem;
     }
 }
