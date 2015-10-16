@@ -99,6 +99,11 @@ span .user {
 	margin: 3em 0 0 0;
 }
 
+li .error {
+	color: #b31313;
+	font-weight: bold;
+}
+
 /* Responsive Styles */
 
 @media (max-width: 1350px) {

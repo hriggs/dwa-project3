@@ -17,6 +17,13 @@
 		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Paragraphs:</label>
 		<input maxlength=1 type="text" name="para" class="form-box" value="{{ $data['para'] }}" required>
+		@if($errors->get('para'))
+    		<ul>
+        	@foreach($errors->get('para') as $error)
+         	<li><span class="error">{{ $error }}</span></li>
+        	@endforeach
+    		</ul>
+		@endif
 		<br>
 		<label>Paragraph length:</label>
 		<select name="length" class="form-box">

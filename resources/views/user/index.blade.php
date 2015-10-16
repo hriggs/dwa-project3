@@ -17,6 +17,13 @@
 		<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Users:</label>
 		<input maxlength=1 type="text" name="users" class="form-box" value="{{ $data['users'] }}" required>
+		@if($errors->get('users'))
+    		<ul>
+        	@foreach($errors->get('users') as $error)
+         	<li><span class="error">{{ $error }}</span></li>
+        	@endforeach
+    		</ul>
+		@endif
 		<br>
 		<p class="include">Optional Includes:</p>
 		<input type="checkbox" name="address" {{ $data['address'] }}> Address

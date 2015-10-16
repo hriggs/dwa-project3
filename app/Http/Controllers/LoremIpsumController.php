@@ -25,10 +25,18 @@ class LoremIpsumController extends Controller {
     */
     public function postIndex(Request $request) {
     		
-    		// Validate the request data
-    		/*$this->validate($request, [
-        		"para_num" => "required"
-    		]);*/
+    		// custom error messages
+    		$messages = [
+    			'required' => 'Paragraph field is required',
+    			'numeric' => 'Paragraph field must only contain a number',
+    			'min' => 'Paragraph number must be between 1 and 9',
+    			'max' => 'Paragraph number must be between 1 and 9'
+			];
+    		
+    		// validate the request data
+    		$this->validate($request, 
+    							["para" => "required|numeric|min:1|max:9"], 
+    							$messages);
     						  
     		return view("lorem.index")->with("output", eval($this->getLorem($request)))->with("data", $this->getFormData($request));
     }
@@ -36,7 +44,7 @@ class LoremIpsumController extends Controller {
    /**
     * Generate lorem ipsum based on user input
     */
-    public function getLorem(Request $request) {
+    private function getLorem(Request $request) {
     	
     		$lorem = "return Lipsum::";
     		$para_num = "";

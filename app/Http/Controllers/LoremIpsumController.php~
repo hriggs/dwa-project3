@@ -25,10 +25,18 @@ class LoremIpsumController extends Controller {
     */
     public function postIndex(Request $request) {
     		
-    		// Validate the request data
-    		/*$this->validate($request, [
-        		"para_num" => "required"
-    		]);*/
+    		// custom error messages
+    		$messages = [
+    			'required' => 'Paragraph field is required',
+    			'numeric' => 'Paragraph field must contain a number',
+    			'min' => 'Paragraph number must be between 1 and 9',
+    			'max' => 'Paragraph number must be between 1 and 9'
+			];
+    		
+    		// validate the request data
+    		$this->validate($request, 
+    							["para" => "required|numeric|min:1|max:9"], 
+    							$messages);
     						  
     		return view("lorem.index")->with("output", eval($this->getLorem($request)))->with("data", $this->getFormData($request));
     }
@@ -36,7 +44,7 @@ class LoremIpsumController extends Controller {
    /**
     * Generate lorem ipsum based on user input
     */
-    public function getLorem(Request $request) {
+    private function getLorem(Request $request) {
     	
     		$lorem = "return Lipsum::";
     		$para_num = "";
@@ -80,7 +88,7 @@ class LoremIpsumController extends Controller {
     	
     		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     			
-    			// store user input values if post
+    			// store user input values if request is POST
     			
     			// paragraph number
     			$request->has("para") ? ($data["para"] = $request->input("para")) : ($data["para"] = "");
@@ -104,7 +112,7 @@ class LoremIpsumController extends Controller {
     			
 			} elseif($_SERVER['REQUEST_METHOD'] === 'GET') {
 				
-				// store blank/default values if get
+				// store blank/default values if request is GET
 				$data = array("para" => "",
     					  "headers" => "",
     					  "short" => "selected",

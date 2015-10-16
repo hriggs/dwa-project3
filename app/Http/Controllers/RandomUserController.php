@@ -24,6 +24,19 @@ class RandomUserController extends Controller {
     * Responds to requests to POST /random-user
     */
     public function postIndex(Request $request) {
+    	
+    	   // custom error messages
+    		$messages = [
+    			'required' => 'User field is required',
+    			'numeric' => 'User field must only contain a number',
+    			'min' => 'User number must be between 1 and 9',
+    			'max' => 'User number must be between 1 and 9'
+			];
+    		
+    		// validate the request data
+    		$this->validate($request, 
+    							["users" => "required|numeric|min:1|max:9"], 
+    							$messages);
 
       	return view("user.index")->with('text', $this->getUserData($request))->with('data', $this->getFormData($request));
     }
@@ -31,7 +44,7 @@ class RandomUserController extends Controller {
    /**
     * Generate user data based on user input
     */
-    public function getUserData(Request $request) {
+    private function getUserData(Request $request) {
     	
     		// create faker instance
     		$faker = Faker::create();
