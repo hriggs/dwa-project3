@@ -82,50 +82,45 @@ class LoremIpsumController extends Controller {
     * Stores and returns the values to be displayed/checked/selected on the form based on request data
     */
     private function getFormData(Request $request) {
-    	
+    		
+    		// to hold all form data
     		$data = [];
+    		
+    		// drop-down, check box names		  
+    		$dropDown = array("short","medium","long","verylong");		  
+    		$checkBox = array("headers","ul","ol","dl","bq","code","decorate","link","allcaps");
     	
     		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     			
     			// store user input values if request is POST
-    			// paragraph number
+    			// store text field paragraph number if given
     			$request->has("para") ? ($data["para"] = $request->input("para")) : ($data["para"] = "");
-    		
-    			// paragraph length 
-				$request->input("length") === "short" ? ($data["short"] = "selected") : ($data["short"] = "");
-				$request->input("length") === "medium" ? ($data["medium"] = "selected") : ($data["medium"] = ""); 
-				$request->input("length") === "long" ? ($data["long"] = "selected") : ($data["long"] = "");
-				$request->input("length") === "verylong" ? ($data["verylong"] = "selected") : ($data["verylong"] = ""); 
-			
-				// optional values
-    			$request->has("headers") ? ($data["headers"] = "checked") : ($data["headers"] = ""); 
-    			$request->has("ul") ? ($data["ul"] = "checked") : ($data["ul"] = ""); 
-    			$request->has("ol") ? ($data["ol"] = "checked") : ($data["ol"] = ""); 
-    			$request->has("dl") ? ($data["dl"] = "checked") : ($data["dl"] = ""); 
-    			$request->has("bq") ? ($data["bq"] = "checked") : ($data["bq"] = ""); 
-    			$request->has("code") ? ($data["code"] = "checked") : ($data["code"] = ""); 
-    			$request->has("decorate") ? ($data["decorate"] = "checked") : ($data["decorate"] = ""); 
-    			$request->has("link") ? ($data["link"] = "checked") : ($data["link"] = ""); 
-    			$request->has("allcaps") ? ($data["allcaps"] = "checked") : ($data["allcaps"] = ""); 
+    			
+    			// store drop-down data if given
+    			for ($i = 0; $i < count($dropDown); $i++) {
+    				$request->input("length") === $dropDown[$i] ? ($data[$dropDown[$i]] = "selected") : ($data[$dropDown[$i]] = "");
+    			}
+    			
+    			// store check box data if given
+    			for ($i = 0; $i < count($checkBox); $i++) {
+    				$request->has($checkBox[$i]) ? ($data[$checkBox[$i]] = "checked") : ($data[$checkBox[$i]] = ""); 
+    			}
     			
 			} elseif($_SERVER['REQUEST_METHOD'] === 'GET') {
 				
-				// store blank/default values if request is GET
-				$data = array("para" => "",
-    					  "headers" => "",
-    					  "short" => "selected",
-    					  "medium" => "",
-    					  "long" => "",
-    					  "verylong" => "",
-    					  "ul" => "",
-    					  "ol" => "",
-    					  "dl" => "",
-    					  "bq" => "",
-    					  "code" => "",
-    					  "decorate" => "",
-    					  "link" => "",
-    					  "allcaps" => ""
-    					  );
+				// store blank values if request is GET
+				// add blank text field paragraph number value
+				$data["para"] = "";				
+				
+				// add blank drop-down values
+				for ($i = 0; $i < count($dropDown); $i++) {
+					$data[$dropDown[$i]] = "";
+				}
+				
+				// add blank check box values
+				for ($i = 0; $i < count($checkBox); $i++) {
+					$data[$checkBox[$i]] = "";
+				}
 			}
 			
 			return $data;

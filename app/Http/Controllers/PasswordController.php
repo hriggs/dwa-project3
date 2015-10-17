@@ -43,17 +43,13 @@ class PasswordController extends Controller {
     */
     private function getFormData(Request $request) {
     	
-    		// text field names
-    		$textField = array("word_num","number_num","symbol_num");
-    		
-    		// drop-down field names			  
-    		$dropDown = array("hyphens","spaces","nospace","start","upper","lower");
-    		
-    		// radio button names			  
-    		$radio = array("num_end","num_random","sym_end","sym_random");
-    	
     		// to hold all form data
     		$data = [];
+    	
+    		// text field, drop-down, radio button names
+    		$textField = array("word_num","number_num","symbol_num");			  
+    		$dropDown = array("hyphens","spaces","nospace","start","upper","lower");		  
+    		$radio = array("num_end","num_random","sym_end","sym_random");
     	
     		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     			
