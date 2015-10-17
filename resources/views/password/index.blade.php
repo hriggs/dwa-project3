@@ -16,45 +16,36 @@
 	<form method="POST" action="/password">
 	<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Words:</label>
-			<div class="br">
-				<br>
-			</div>
-		<input maxlength=1 type="text" name="word_num" class="form-box" required>
+		<input maxlength=1 type="text" name="word_num" class="form-box" value="{{ $data['word_num'] }}" required>
 		<p class="include">Optional Includes:</p>
 		<label>Number of Numbers:</label>
-		<div class="br">
-			<br>
-		</div>
-		<input maxlength=1 type="text" name="number_num" class="form-box">
+		<input maxlength=1 type="text" name="number_num" class="form-box" value="{{ $data['number_num'] }}">
 		<br>
 		<label>Number Location:</label>
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="number_loc" value="end">At End 
-		<input type="radio" name="number_loc" value="random">Random
+		<input type="radio" name="number_loc" value="num_end" {{ $data['num_end'] }} required>At End 
+		<input type="radio" name="number_loc" value="num_random" {{ $data['num_random'] }}>Random
 		<br>
 		<label>Number of Symbols:</label>
-		<div class="br">
-			<br>
-		</div>
-		<input maxlength=1 type="text" name="symbol_num" class="form-box">
+		<input maxlength=1 type="text" name="symbol_num" class="form-box" value="{{ $data['symbol_num'] }}">
 		<br>
 		<label>Symbol Location:</label>
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="symbol_loc" value="end">At End 
-		<input type="radio" name="symbol_loc" value="random">Random
+		<input type="radio" name="symbol_loc" value="sym_end" {{ $data['sym_end'] }} required>At End 
+		<input type="radio" name="symbol_loc" value="sym_random" {{ $data['sym_random'] }}>Random
 		<br>
 		<label>Separate Words with:</label>
 		<div class="br">
 			<br>
 		</div>
 		<select name="separator" class="form-box">
-			<option value="hyphens">Hyphens</option>
-  			<option value="spaces">Spaces</option>
-  			<option value="nospace">No Characters</option>
+			<option value="hyphens" {{ $data['hyphens'] }}>Hyphens</option>
+  			<option value="spaces" {{ $data['spaces'] }}>Spaces</option>
+  			<option value="nospace" {{ $data['nospace'] }}>No Characters</option>
 		</select> 
 		<br>
 		<label>Word Cases:</label>
@@ -62,9 +53,9 @@
 			<br>
 		</div>
 		<select name="cases" class="form-box">
-			<option value="start">First Letter Capitalized</option>
-  			<option value="upper">All Upper Case</option>
-  			<option value="lower">All Lower Case</option>
+			<option value="start" {{ $data['start'] }}>First Letter Capitalized</option>
+  			<option value="upper" {{ $data['upper'] }}>All Upper Case</option>
+  			<option value="lower" {{ $data['lower'] }}>All Lower Case</option>
 		</select> 
 		<br>
 		<input type="submit" class="btn btn-primary submit" value="Generate Password">

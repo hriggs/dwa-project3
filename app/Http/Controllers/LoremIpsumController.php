@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Request;
 use Lipsum;
 
 class LoremIpsumController extends Controller {
@@ -89,7 +88,6 @@ class LoremIpsumController extends Controller {
     		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     			
     			// store user input values if request is POST
-    			
     			// paragraph number
     			$request->has("para") ? ($data["para"] = $request->input("para")) : ($data["para"] = "");
     		

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Request;
 use Lipsum;
 
 class LoremIpsumController extends Controller {
@@ -28,7 +27,7 @@ class LoremIpsumController extends Controller {
     		// custom error messages
     		$messages = [
     			'required' => 'Paragraph field is required',
-    			'numeric' => 'Paragraph field must contain a number',
+    			'numeric' => 'Paragraph field must only contain a number',
     			'min' => 'Paragraph number must be between 1 and 9',
     			'max' => 'Paragraph number must be between 1 and 9'
 			];
