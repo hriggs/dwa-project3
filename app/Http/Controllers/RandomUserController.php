@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
-//use Illuminate\Support\Facades\Request;
 use Illuminate\Http\Request;
 use Faker\Factory as Faker;
 
@@ -112,32 +111,33 @@ class RandomUserController extends Controller {
     */
     private function getFormData(Request $request) {
     	
+    		// to hold all form data
     		$data = [];
+    		
+    		// check box names
+    		$checkBox = array("address","phoneNumber","freeEmail","birthday","text");
     	
     		if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     			
     			// store user input values if request is POST
-    			
-    			// user number
+    			// store text field user number if given
     			$request->has("users") ? ($data["users"] = $request->input("users")) : ($data["users"] = "");
     		
-    			// optional values
-				$request->has("address") ? ($data["address"] = "checked") : ($data["address"] = ""); 
-				$request->has("phoneNumber") ? ($data["phoneNumber"] = "checked") : ($data["phoneNumber"] = ""); 
-				$request->has("freeEmail") ? ($data["freeEmail"] = "checked") : ($data["freeEmail"] = ""); 
-				$request->has("birthday") ? ($data["birthday"] = "checked") : ($data["birthday"] = ""); 
-				$request->has("text") ? ($data["text"] = "checked") : ($data["text"] = ""); 
+    			// store check box data if given
+    			for ($i = 0; $i < count($checkBox); $i++) {
+    				$request->has($checkBox[$i]) ? ($data[$checkBox[$i]] = "checked") : ($data[$checkBox[$i]] = ""); 
+    			}
     			
 			} elseif($_SERVER['REQUEST_METHOD'] === 'GET') {
 				
 				// store blank/default values if request is GET
-				$data = array("users" => "",
-    					  "address" => "",
-    					  "phoneNumber" => "",
-    					  "freeEmail" => "",
-    					  "birthday" => "",
-    					  "text" => ""
-    					  );
+				// add blank text field paragraph number value
+				$data["users"] = "";	
+				
+				// add blank check box values
+				for ($i = 0; $i < count($checkBox); $i++) {
+					$data[$checkBox[$i]] = "";
+				}
 			}
 			
 			return $data;
