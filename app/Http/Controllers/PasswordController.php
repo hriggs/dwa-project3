@@ -21,6 +21,20 @@ class PasswordController extends Controller {
     * Responds to requests to POST /password
     */
     public function postIndex(Request $request) {
+    	
+    	   // custom error messages
+    		$messages = [
+    			'required' => 'Word number field is required',
+    			'numeric' => 'Word number field must only contain a number',
+    			'min' => 'Word number must be between 1 and 9',
+    			'max' => 'Word number must be between 1 and 9'
+			];
+    		
+    		// validate the request data
+    		$this->validate($request, 
+    							["word_num" => "required|numeric|min:1|max:9"], 
+    							$messages);
+    	
         return view("password.index")->with("data", $this->getFormData($request));
     }
     
@@ -43,7 +57,6 @@ class PasswordController extends Controller {
 				$request->input("separator") === "hyphens" ? ($data["hyphens"] = "selected") : ($data["hyphens"] = "");
 				$request->input("separator") === "spaces" ? ($data["spaces"] = "selected") : ($data["spaces"] = ""); 
 				$request->input("separator") === "nospace" ? ($data["nospace"] = "selected") : ($data["nospace"] = "");
- 
  				$request->input("cases") === "start" ? ($data["start"] = "selected") : ($data["start"] = "");
 				$request->input("cases") === "upper" ? ($data["upper"] = "selected") : ($data["upper"] = ""); 
 				$request->input("cases") === "lower" ? ($data["lower"] = "selected") : ($data["lower"] = "");
@@ -51,7 +64,6 @@ class PasswordController extends Controller {
 				// radio buttons
 				$request->input("number_loc") === "num_end" ? ($data["num_end"] = "checked") : ($data["num_end"] = "");
 				$request->input("number_loc") === "num_random" ? ($data["num_random"] = "checked") : ($data["num_random"] = ""); 
-				
 				$request->input("symbol_loc") === "sym_end" ? ($data["sym_end"] = "checked") : ($data["sym_end"] = "");
 				$request->input("symbol_loc") === "sym_random" ? ($data["sym_random"] = "checked") : ($data["sym_random"] = ""); 
 				
@@ -79,17 +91,12 @@ class PasswordController extends Controller {
     					  "start" => "",
     					  "upper" => "",
     					  "lower" => "",
-    					  
     					  "num_end" => "",
     					  "num_random" => "",
-    					  
-    					  
     					  "sym_end" => "",
     					  "sym_random" => ""
     					  );
 			}
-			
-			print_r($data);
 			
 			return $data;
     }

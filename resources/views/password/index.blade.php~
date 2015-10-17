@@ -25,7 +25,7 @@
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="number_loc" value="num_end" {{ $data['num_end'] }} required>At End 
+		<input type="radio" name="number_loc" value="num_end" {{ $data['num_end'] }}>At End 
 		<input type="radio" name="number_loc" value="num_random" {{ $data['num_random'] }}>Random
 		<br>
 		<label>Number of Symbols:</label>
@@ -35,8 +35,8 @@
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="symbol_loc" value="sym_end" {{ $data['sym_end'] }} required>At End 
-		<input type="radio" name="symbol_loc" value="sym_random" {{ $data['sym_end'] }}>Random
+		<input type="radio" name="symbol_loc" value="sym_end" {{ $data['sym_end'] }}>At End 
+		<input type="radio" name="symbol_loc" value="sym_random" {{ $data['sym_random'] }}>Random
 		<br>
 		<label>Separate Words with:</label>
 		<div class="br">

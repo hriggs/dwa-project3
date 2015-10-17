@@ -17,6 +17,13 @@
 	<input type='hidden' name='_token' value='{{ csrf_token() }}'>
 		<label>Number of Words:</label>
 		<input maxlength=1 type="text" name="word_num" class="form-box" value="{{ $data['word_num'] }}" required>
+		@if($errors->get('word_num'))
+    		<ul>
+        	@foreach($errors->get('word_num') as $error)
+         	<li><span class="error">{{ $error }}</span></li>
+        	@endforeach
+    		</ul>
+		@endif
 		<p class="include">Optional Includes:</p>
 		<label>Number of Numbers:</label>
 		<input maxlength=1 type="text" name="number_num" class="form-box" value="{{ $data['number_num'] }}">
@@ -25,7 +32,7 @@
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="number_loc" value="num_end" {{ $data['num_end'] }} required>At End 
+		<input type="radio" name="number_loc" value="num_end" {{ $data['num_end'] }}>At End 
 		<input type="radio" name="number_loc" value="num_random" {{ $data['num_random'] }}>Random
 		<br>
 		<label>Number of Symbols:</label>
@@ -35,7 +42,7 @@
 		<div class="br">
 			<br>
 		</div>
-		<input type="radio" name="symbol_loc" value="sym_end" {{ $data['sym_end'] }} required>At End 
+		<input type="radio" name="symbol_loc" value="sym_end" {{ $data['sym_end'] }}>At End 
 		<input type="radio" name="symbol_loc" value="sym_random" {{ $data['sym_random'] }}>Random
 		<br>
 		<label>Separate Words with:</label>
