@@ -1,7 +1,17 @@
 @extends('layouts.master')
 
 @section('description')
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+<div class="list">
+	Developer's Best Friend contains three tools that a developer may need when developing a project. 
+	<ol>
+		<li>First, it contains a lorem ipsum generator tool which allows the user to specify how many paragraphs
+		to generate, along with a variety of other options including the ability to have headers present, 
+		various types of lists present, or bold and italic text.</li> 
+		<li>It also includes a random user data generator tool which allows the user to generate data for the number of users of their chosing. This tools also
+		allows allows for extra optional data to be generated.</li> 
+		<li>Finally, the app contains a xkcd password generator tool.</li>
+	</ol>
+	</div>
 @stop
 
 @section('content')

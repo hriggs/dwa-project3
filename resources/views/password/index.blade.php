@@ -9,7 +9,13 @@
 @stop
 
 @section('description')
-	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+	A xkcd password is a password that includes a collection of random words. 
+	The idea is that this type of password is easy for humans to remember 
+	(unlike the type of passwords we are often told to use that consist of a 
+	random assortment of letters, numbers, and symbols), but difficult for a 
+	hacker's computer program to guess.
+	<br>
+	*Nine is the highest number that can be entered in a text field.*
 @stop
 
 @section('content')
@@ -70,4 +76,8 @@
 	<div class="output">
 	password here
 	</div>
+	<br>
+	<br>
+	<img src="/images/password_comic.png" alt="xkcd password comic." class="img-responsive">
+	
 @stop

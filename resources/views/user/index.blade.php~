@@ -9,7 +9,9 @@
 @stop
 
 @section('description')
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+    Generate random user data! 
+    <br>
+    
 @stop
 
 @section('content')
@@ -19,7 +21,7 @@
 		<input maxlength=1 type="text" name="users" class="form-box" value="{{ $data['users'] }}" required>
 		@if($errors->get('users'))
     		<ul>
-        	@foreach($errors->get('para') as $error)
+        	@foreach($errors->get('users') as $error)
          	<li><span class="error">{{ $error }}</span></li>
         	@endforeach
     		</ul>

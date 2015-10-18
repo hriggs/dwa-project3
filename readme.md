@@ -12,10 +12,17 @@ tool to generate random user data.
 <https://TBA>
 
 ## Details for teaching team
-* Responsive design and styling via Bootsrap
+Challenges I chose to implement:
+* Extra lorem ipsum options: ability to specify paragraph length and add text types such as headers, lists, and links
+* Extra user data options: ability show extra user data such as address, birthday, and e-mail
+* xkcd password generator code incorporated into app
+* Forms that are sticky when submitted via POST and forms that reset when page loaded via GET
+* Validation for user input
+* Responsive design (including responsive navigation bar) and styling via Bootstrap and media queries
 
 ## Outside code
 * Bootstrap: <http://getbootstrap.com/>
-* Icon: <https://icons8.com/>
+* Tentacle icon: <https://icons8.com/>
+* Password image: <http://xkcd.com/license.html>
 * laravel-lipsum (lorem ipsum) package: <https://github.com/magyarjeti/loripsum-client>
 * Faker (user data) package: <https://github.com/fzaninotto/Faker>
