@@ -33,6 +33,13 @@
 		<p class="include">Optional Includes:</p>
 		<label>Number of Numbers:</label>
 		<input maxlength=1 type="text" name="number_num" class="form-box" value="{{ $data['number_num'] }}">
+		@if($errors->get('number_num'))
+    		<ul>
+        	@foreach($errors->get('number_num') as $error)
+         	<li><span class="error">{{ $error }}</span></li>
+        	@endforeach
+    		</ul>
+		@endif
 		<br>
 		<label>Number Location:</label>
 		<div class="br">
@@ -43,6 +50,13 @@
 		<br>
 		<label>Number of Symbols:</label>
 		<input maxlength=1 type="text" name="symbol_num" class="form-box" value="{{ $data['symbol_num'] }}">
+		@if($errors->get('symbol_num'))
+    		<ul>
+        	@foreach($errors->get('symbol_num') as $error)
+         	<li><span class="error">{{ $error }}</span></li>
+        	@endforeach
+    		</ul>
+		@endif
 		<br>
 		<label>Symbol Location:</label>
 		<div class="br">
@@ -74,7 +88,7 @@
 		<input type="submit" class="btn btn-primary submit" value="Generate Password">
 	</form>
 	<div class="output">
-	password here
+		{{ $output }}
 	</div>
 	<br>
 	<br>
