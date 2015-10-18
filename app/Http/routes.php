@@ -10,20 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-/*Route::get("/", function () {
-    //return view("welcome");
-    return "hello";
-});*/
 
 Route::controller("/lorem-ipsum","LoremIpsumController");
 
 Route::controller("/random-user","RandomUserController");
 
 Route::controller("/password","PasswordController");
-
-Route::get("/test", function () {
-
-        	 	return "test";
-});
 
 Route::controller("/", "IndexController");
