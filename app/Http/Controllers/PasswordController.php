@@ -49,8 +49,8 @@ class PasswordController extends Controller {
     		// array of symbols
 			$symbols = Array("~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=");
 			
-			// word list-- change to words being scraped form txt file
-			$words = Array("hello", "my", "name", "is", "hannah", "i", "love", "dancing", "foxes", "yay");
+			// create word array from file
+			$words = file(storage_path() . "/app/words/words.txt", FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
 			
 			// if user has not tried to generate a password yet, show nothing
     		if (!$request->has("word_num")) {
@@ -137,6 +137,16 @@ class PasswordController extends Controller {
     		}
     	
     		return $password; 
+    }
+    
+   /**
+    *
+    */
+    private function getWords() {
+		$words = file(storage_path() . "/app/words/words.txt");
+		print_r($words);
+		
+		return $words; 
     }
     
    /**

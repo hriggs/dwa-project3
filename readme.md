@@ -24,5 +24,6 @@ Challenges I chose to implement:
 * Bootstrap: <http://getbootstrap.com/>
 * Tentacle icon: <https://icons8.com/>
 * Password image: <http://xkcd.com/license.html>
+* English word list: <http://www-01.sil.org/linguistics/wordlists/english/>
 * laravel-lipsum (lorem ipsum) package: <https://github.com/magyarjeti/loripsum-client>
 * Faker (user data) package: <https://github.com/fzaninotto/Faker>
