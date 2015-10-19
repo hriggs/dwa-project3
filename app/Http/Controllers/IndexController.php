@@ -5,8 +5,10 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller {
 	
+  /**
+	* Construct function
+	*/
     public function __construct() {
-        # Put anything here that should happen before any of the other actions
     }
     
     /**

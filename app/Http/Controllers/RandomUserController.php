@@ -7,20 +7,26 @@ use Faker\Factory as Faker;
 
 class RandomUserController extends Controller {
 	
+  /**
+	* Construct function
+	*/
     public function __construct() {
-    		# Put anything here that should happen before any of the other actions
     }
     
    /**
     * Responds to requests to GET /random-user
+    * 
+    * @param $request request object
     */
     public function getIndex(Request $request) {
-
+    	
       	return view("user.index")->with('text', "User data will appear here.")->with('data', $this->getFormData($request));
     }
     
    /**
     * Responds to requests to POST /random-user
+    * 
+    * @param $request request object
     */
     public function postIndex(Request $request) {
     	
@@ -42,6 +48,8 @@ class RandomUserController extends Controller {
     
    /**
     * Generate user data based on user input
+    * 
+    * @param $request request object
     */
     private function getUserData(Request $request) {
     	
@@ -62,6 +70,7 @@ class RandomUserController extends Controller {
 						
 						// store number of users
 						$users = $value;
+						
 					} else {
 						
 						// store option in array
@@ -83,10 +92,12 @@ class RandomUserController extends Controller {
     					
     					// add user birthday
     					$data .= "<li>" . $faker->dateTimeThisCentury->format('Y-m-d') . "</li>";
+    					
     				} elseif ($options[$j] === "text") {
     					
     					// add profile blurb
     					$data .= "<li>Profile: " . $faker->text($maxNbChars = 200) . "</li>";
+    					
     				} else {
     					
     					// add other options
@@ -96,7 +107,7 @@ class RandomUserController extends Controller {
     			
     			$data .= "</ul>";
     			
-    			// do not add 2 breaks after last user data
+    			// do not add 2 breaks after last section of user data
     			if ($i < $users - 1) {
     				$data .= "<br><br>";
     			}
@@ -108,6 +119,8 @@ class RandomUserController extends Controller {
     
    /**
     * Stores and returns the values to be displayed/checked/selected on the form based on request data
+    * 
+    * @param $request request object
     */
     private function getFormData(Request $request) {
     	

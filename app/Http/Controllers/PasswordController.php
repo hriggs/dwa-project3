@@ -6,19 +6,26 @@ use Illuminate\Http\Request;
 
 class PasswordController extends Controller {
 	
+  /**
+	* Construct function
+	*/
     public function __construct() {
-        # Put anything here that should happen before any of the other actions
     }
     
    /**
     * Responds to requests to GET /password
+    * 
+    * @param $request request object
     */
     public function getIndex(Request $request) {
+    	
         return view("password.index")->with("output", $this->getPassword($request))->with("data", $this->getFormData($request));
     }
     
    /**
     * Responds to requests to POST /password
+    * 
+    * @param $request request object
     */
     public function postIndex(Request $request) {
     	
@@ -43,6 +50,8 @@ class PasswordController extends Controller {
     
    /**
     * Generates and returns a random password based on user input
+    * 
+    * @param $request request object
     */
     private function getPassword(Request $request) {
     	
@@ -78,6 +87,7 @@ class PasswordController extends Controller {
     				
     				// 50% chance of adding number
     				if (rand(0, 1) == 1) {
+    					
     					// add random number
     					$password .= rand(0, 9);
     					$num_count--; 
@@ -140,17 +150,9 @@ class PasswordController extends Controller {
     }
     
    /**
-    *
-    */
-    private function getWords() {
-		$words = file(storage_path() . "/app/words/words.txt");
-		print_r($words);
-		
-		return $words; 
-    }
-    
-   /**
     * Stores and returns the values to be displayed/checked/selected on the form based on request data
+    * 
+    * @param $request request object
     */
     private function getFormData(Request $request) {
     	

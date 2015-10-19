@@ -9,7 +9,8 @@
 @stop
 
 @section('description')
-	Generate lorem ipsum text! 
+	Generate lorem ipsum text!
+	<br>
 	*Paragraph number must be between 1 and 9.*
 @stop
 

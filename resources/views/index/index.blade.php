@@ -8,7 +8,7 @@
 		to generate, along with a variety of other options including the ability to have headers present, 
 		various types of lists present, or bold and italic text.</li> 
 		<li>It also includes a random user data generator tool which allows the user to generate data for the number of users of their chosing. This tools also
-		allows allows for extra optional data to be generated.</li> 
+		allows for extra optional data to be generated.</li> 
 		<li>Finally, the app contains a xkcd password generator tool.</li>
 	</ol>
 	</div>
@@ -37,5 +37,3 @@
 		</div> <!-- end row --> 
 	</div> <!-- end container-fluid -->
 @stop
-
-
