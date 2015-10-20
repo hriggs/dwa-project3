@@ -13,7 +13,7 @@ symbols and numbers distributed throughout or at the end of the password.
 
 ## Demo
 <https://youtu.be/ebpvuwCu9vw>
-Again, so sorry for the white noise in the background of the demo! 
+* Again, so sorry for the white noise in the background of the demo! 
 
 ## Details for teaching team
 Challenges I chose to implement:
