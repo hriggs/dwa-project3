@@ -13,6 +13,7 @@ symbols and numbers distributed throughout or at the end of the password.
 
 ## Demo
 <https://TBA>
+Again, so sorry for the white noise in the background of the demo! 
 
 ## Details for teaching team
 Challenges I chose to implement:
@@ -24,9 +25,9 @@ Challenges I chose to implement:
 * Responsive design (including responsive navigation bar) and styling via Bootstrap and media queries
 
 ## Outside code
+* laravel-lipsum (lorem ipsum) package: <https://github.com/magyarjeti/loripsum-client>
+* Faker (user data) package: <https://github.com/fzaninotto/Faker>
 * Bootstrap: <http://getbootstrap.com/>
 * Tentacle icon: <https://icons8.com/>
 * Password image: <http://xkcd.com/license.html>
 * English word list: <http://www-01.sil.org/linguistics/wordlists/english/>
-* laravel-lipsum (lorem ipsum) package: <https://github.com/magyarjeti/loripsum-client>
-* Faker (user data) package: <https://github.com/fzaninotto/Faker>
