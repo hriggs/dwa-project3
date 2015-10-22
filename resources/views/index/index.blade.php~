@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('subheading')
+	Developer's Best Friend
+@stop
+
 @section('description')
 <div class="list">
 	Developer's Best Friend contains three tools that a developer may need when developing a project. 
@@ -19,7 +23,7 @@
 		<div class="row">
 			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-4"></div>
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-				<img src="/images/icon.png" class="img-responsive"><br>
+				<img src="/images/icon.png" class="img-responsive" alt="Tentacle icon."><br>
 			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-4"></div>
 		</div> <!-- end row --> 
 		
@@ -37,5 +41,3 @@
 		</div> <!-- end row --> 
 	</div> <!-- end container-fluid -->
 @stop
-
-

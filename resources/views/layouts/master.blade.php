@@ -52,10 +52,10 @@
 					@yield('description')
 				</p>
 
-    			<section>
+    			<div>
         			{{-- Main page content will be yielded here --}}
         			@yield('content')
-    			</section>
+    			</div>
 
     		<footer>
     			Copyright &copy; {{ date('Y') }} Hannah Riggs <br>
