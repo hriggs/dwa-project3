@@ -47,10 +47,8 @@
 					@yield('subheading')
 				</h2>
 
-				<p class="justify">
 					{{-- Page description will be yielded here --}}
 					@yield('description')
-				</p>
 
     			<div>
         			{{-- Main page content will be yielded here --}}

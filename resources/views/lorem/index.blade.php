@@ -9,9 +9,7 @@
 @stop
 
 @section('description')
-	Generate lorem ipsum text!
-	<br>
-	*Paragraph number must be between 1 and 9.*
+	<p>Generate lorem ipsum text!<br>*Paragraph number must be between 1 and 9.*</p>
 @stop
 
 @section('content')

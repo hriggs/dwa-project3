@@ -9,9 +9,7 @@
 @stop
 
 @section('description')
-    Generate random user data! 
-    <br>
-    *User number must be between 1 and 9.* 
+	<p>Generate random user data!<br>*User number must be between 1 and 9.*</p>
 @stop
 
 @section('content')
