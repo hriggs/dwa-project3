@@ -24,6 +24,7 @@
 			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-4"></div>
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 				<img src="/images/icon.png" class="img-responsive" alt="Tentacle icon."><br>
+			</div>
 			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-4"></div>
 		</div> <!-- end row --> 
 		
@@ -37,6 +38,7 @@
    				<a href="/random-user" class="btn btn-primary home-button">Random User Generator</a>
    				<div class="br-home"><br></div>
    				<a href="/password" class="btn btn-primary home-button">xkcd Password Generator</a>
+   		</div>
 			<div class="col-lg-2 col-md-1"></div>
 		</div> <!-- end row --> 
 	</div> <!-- end container-fluid -->
