@@ -92,7 +92,7 @@ span .user {
 .output {
 	border: 2px solid #606060;
 	padding: 1em;
-	margin: 10em 0 1em 0;
+	margin: 3em 0 1em 0;
 }
 
 li .error {
@@ -121,9 +121,21 @@ li .error {
 }
 
 @media (max-width: 960px) {
-
+	
 	.home-button {
 		font-size: 90%;
+	}
+}
+
+@media (max-width: 900px) {
+	
+	.buttons {
+		width: 40%;
+		margin: 0 30%;
+	}
+	
+	.buttons a {
+		margin-bottom: 1em;
 	}
 }
 
@@ -197,7 +209,8 @@ li .error {
 	
 	.buttons {
 		width: 95%;
-		margin: 0 2.5%;
+		margin: 2.5%;
+		font-size: 90%;
 	}
 
 	.home-button {

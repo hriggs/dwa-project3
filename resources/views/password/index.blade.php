@@ -9,7 +9,7 @@
 @stop
 
 @section('description')
-	<p>
+	<p class="justify">
 	A xkcd password is a password that includes a collection of random words. 
 	The idea is that this type of password is easy for humans to remember 
 	(unlike the type of passwords we are often told to use that consist of a 

@@ -5,7 +5,7 @@
 @stop
 
 @section('description')
-<div class="list">
+<div class="justify">
 	Developer's Best Friend contains three tools that a developer may need when developing a project. 
 	<ol>
 		<li>First, it contains a lorem ipsum generator tool which allows the user to specify how many paragraphs
