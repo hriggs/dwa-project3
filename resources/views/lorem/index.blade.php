@@ -27,10 +27,10 @@
 		<br>
 		<label>Paragraph length:</label>
 		<select name="length" class="form-box">
-			<option name="short" value="short" {{ $data['short'] }}>Short</option>
-  			<option name="medium" value="medium" {{ $data['medium'] }}>Medium</option>
-  			<option name="long" value="long" {{ $data['long'] }}>Long</option>
-  			<option name="verylong" value="verylong" {{ $data['verylong'] }}>Very long</option>
+			<option value="short" {{ $data['short'] }}>Short</option>
+  			<option value="medium" {{ $data['medium'] }}>Medium</option>
+  			<option value="long" {{ $data['long'] }}>Long</option>
+  			<option value="verylong" {{ $data['verylong'] }}>Very long</option>
 		</select> 
 		<br>
 		<p class="include">Optional Includes:</p>

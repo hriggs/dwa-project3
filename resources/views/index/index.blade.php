@@ -31,15 +31,15 @@
 		<div class="clearfix"></div>
 		
 		<div class="row">
-			<div class="col-lg-2 col-md-1"></div>
-			<div class="col-lg-8 col-md-10 buttons">
+			<div class="col-lg-1 col-md-1"></div>
+			<div class="col-lg-10 col-md-10 buttons">
 				   <a href="/lorem-ipsum" class="btn btn-primary home-button">Lorem Ipsum Generator</a>
 				   <div class="br-home"><br></div>
    				<a href="/random-user" class="btn btn-primary home-button">Random User Generator</a>
    				<div class="br-home"><br></div>
    				<a href="/password" class="btn btn-primary home-button">xkcd Password Generator</a>
    		</div>
-			<div class="col-lg-2 col-md-1"></div>
+			<div class="col-lg-1 col-md-1"></div>
 		</div> <!-- end row --> 
 	</div> <!-- end container-fluid -->
 @stop
